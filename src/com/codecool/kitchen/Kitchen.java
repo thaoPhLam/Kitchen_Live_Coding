@@ -15,27 +15,15 @@ public class Kitchen {
 
     public void hire(Employee employee) {
         if (employee instanceof Chef) {
-            hire((Chef) employee);
+            this.chef = (Chef) employee;
+            chef.registerProvider(this);
         } else if (employee instanceof KitchenHelper) {
-            hire((KitchenHelper) employee);
+            kitchenHelpers.add((KitchenHelper) employee);
         } else if (employee instanceof Cook) {
-            hire((Cook) employee);
+            cooks.add((Cook) employee);
         } else {
             throw new IllegalArgumentException("Unrecognized employee type: " + employee.getClass().getSimpleName());
         }
-    }
-
-    public void hire(Chef chef) {
-        this.chef = chef;
-        chef.registerProvider(this);
-    }
-
-    public void hire(KitchenHelper kitchenHelper) {
-        kitchenHelpers.add(kitchenHelper);
-    }
-
-    public void hire(Cook cook) {
-        cooks.add(cook);
     }
 
     public void conductAShift() {
