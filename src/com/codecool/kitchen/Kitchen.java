@@ -8,7 +8,7 @@ import com.codecool.kitchen.employee.KitchenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kitchen {
+public class Kitchen implements IngredientChecker {
     private Chef chef;
     private List<Cook> cooks = new ArrayList<>();
     private List<KitchenHelper> kitchenHelpers = new ArrayList<>();
@@ -30,5 +30,12 @@ public class Kitchen {
         kitchenHelpers.forEach(KitchenHelper::fillBasket);
         chef.cook();
         cooks.forEach(Cook::cook);
+    }
+
+    @Override
+    public void doWeHaveIngredient(Ingredient ingredient) {
+        for (KitchenHelper kitchenHelper : kitchenHelpers) {
+            kitchenHelper.giveIngredient(ingredient);
+        }
     }
 }
