@@ -1,16 +1,13 @@
 package com.codecool.kitchen;
 
-import com.codecool.kitchen.employee.Chef;
-import com.codecool.kitchen.employee.Cook;
 import com.codecool.kitchen.employee.Employee;
-import com.codecool.kitchen.employee.KitchenHelper;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class Kitchen implements IngredientProvider {
+public class Kitchen {
     private Chef chef;
-    private List<Cook> cooks = new LinkedList<>();
+    private List<Cook> cooks = new ArrayList<>();
     private List<KitchenHelper> kitchenHelpers = new LinkedList<>();
 
     public void hire(Employee employee) {
@@ -42,28 +39,5 @@ public class Kitchen implements IngredientProvider {
         kitchenHelpers.forEach(KitchenHelper::stockUp);
         chef.cook();
         cooks.forEach(Cook::cook);
-    }
-
-    @Override
-    public boolean provide(Ingredient ingredient) {
-        for (KitchenHelper kitchenHelper : kitchenHelpers) {
-            try {
-                kitchenHelper.give(ingredient);
-                System.out.println(
-                        "Hooray, could provide " + ingredient
-                        + " from " + kitchenHelper.getName()
-                );
-
-                return true;
-            }
-            catch (NoSuchIngredient e) {
-                System.out.println(
-                        "Error " + e.getMessage()
-                        + " from " + kitchenHelper.getName()
-                );
-            }
-        }
-
-        return false;
     }
 }

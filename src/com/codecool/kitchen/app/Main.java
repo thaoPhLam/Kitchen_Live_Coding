@@ -1,8 +1,6 @@
 package com.codecool.kitchen.app;
 
 import com.codecool.kitchen.Kitchen;
-import com.codecool.kitchen.employee.Chef;
-import com.codecool.kitchen.employee.KitchenHelper;
 
 public class Main {
     public static void main(String[] args) {
