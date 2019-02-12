@@ -14,4 +14,13 @@ public abstract class Employee {
     public int createTaxReport() {
         return (int) Math.floor((double)salary*0.99);
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " {" +
+                "name='" + name + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }

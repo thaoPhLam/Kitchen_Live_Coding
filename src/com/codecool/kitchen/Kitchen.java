@@ -1,14 +1,17 @@
 package com.codecool.kitchen;
 
+import com.codecool.kitchen.employee.Chef;
+import com.codecool.kitchen.employee.Cook;
 import com.codecool.kitchen.employee.Employee;
+import com.codecool.kitchen.employee.KitchenHelper;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Kitchen {
     private Chef chef;
     private List<Cook> cooks = new ArrayList<>();
-    private List<KitchenHelper> kitchenHelpers = new LinkedList<>();
+    private List<KitchenHelper> kitchenHelpers = new ArrayList<>();
 
     public void hire(Employee employee) {
         if (employee instanceof Chef) {
@@ -36,7 +39,7 @@ public class Kitchen {
     }
 
     public void conductAShift() {
-        kitchenHelpers.forEach(KitchenHelper::stockUp);
+        kitchenHelpers.forEach(KitchenHelper::fillBasket);
         chef.cook();
         cooks.forEach(Cook::cook);
     }

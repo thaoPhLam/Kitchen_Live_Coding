@@ -1,4 +1,4 @@
-package com.codecool.kitchen.employee;
+package com.codecool.kitchen;
 
 import java.util.Random;
 

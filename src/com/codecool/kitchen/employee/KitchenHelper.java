@@ -1,6 +1,9 @@
 package com.codecool.kitchen.employee;
 
+import com.codecool.kitchen.Ingredient;
+
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 
@@ -18,14 +21,16 @@ public class KitchenHelper extends Employee {
         }
     }
 
-    public Ingredient giveIngredient(Ingredient ingredient) {
-        for (Integer ingredientAmount : ingredients.values()) {
-            if (ingredientAmount.equals(0)) {
-                System.out.println("We are out of " + ingredient);
+    public void giveIngredient(Ingredient ingredient) {
+        Iterator it = ingredients.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry) it.next();
+            if ((int) pair.getValue() > 0) {
+                System.out.println("I can give a " + ingredient);
             } else {
-
+                System.out.println("We're OUT of that!");
             }
         }
-        return ingredient;
+        //return ingredient;
     }
 }
