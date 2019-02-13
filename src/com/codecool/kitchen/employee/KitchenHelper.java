@@ -28,9 +28,8 @@ public class KitchenHelper extends Employee {
             if ((int) pair.getValue() > 0) {
                 System.out.println("I can give a " + ingredient);
             } else {
-                System.out.println("We're OUT of that!");
+                System.out.println("We're OUT of " + ingredient);
             }
         }
-        //return ingredient;
     }
 }
