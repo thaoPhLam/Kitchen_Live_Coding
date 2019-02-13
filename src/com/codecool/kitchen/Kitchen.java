@@ -44,6 +44,16 @@ public class Kitchen implements IngredientProvider {
         cooks.forEach(Cook::cook);
     }
 
+    /**
+     * Kitchen-ben vagyunk
+     * - itt vannak a chef s a helper-k
+     * - a kitchen adjon infót arról,
+     * h a helper-knél van e olyan ingredient (tud e szolgálni olyan ingredient-tel), amire
+     * - a chef-nek szüksége van
+     * - írunk egy getIngredientFromHelper(Ingredient ingredient)-t, melyben
+     * végig iterálunk a kitchenHelper-eken s
+     * meghívjuk rajtuk a giveIngredient(Ingredient ingredient)-t
+     */
     @Override
     public boolean provide(Ingredient ingredient) {
         for (KitchenHelper kitchenHelper : kitchenHelpers) {

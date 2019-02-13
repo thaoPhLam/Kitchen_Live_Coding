@@ -18,6 +18,15 @@ public class Chef extends Employee implements Cooker {
         provider = Optional.of(ingredientProvider);
     }
 
+    /**
+     * Chef
+     * - úgy cook-ol, h kér egy ingredient-t
+     * --> request(Ingredient ingredient)
+     *
+     * - chef-nek kell ez az információ a konyhából
+     * --> kell egy interface-s field, amivel elérjük az infót, arról, h
+     * van e a konyhában bármely helper-nél a kért ingredient
+     */
     @Override
     public void cook() {
         Ingredient ingredient = Ingredient.getRandom();
