@@ -15,6 +15,10 @@ public abstract class Employee {
         return (int) Math.floor((double)salary*0.99);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return getClass().getSimpleName() + " {" +
