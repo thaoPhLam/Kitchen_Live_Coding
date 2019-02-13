@@ -26,7 +26,7 @@ public class Chef extends Cooker {
         if (request(ingredient)) {
             System.out.println("Wohoo");
         } else {
-            System.out.println("What do you mena we don't have any?!");
+            System.out.println("NO " + ingredient + "?!!");
         }
 
     }
