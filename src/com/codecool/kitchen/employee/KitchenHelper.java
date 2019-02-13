@@ -26,9 +26,13 @@ public class KitchenHelper extends Employee {
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             if ((int) pair.getValue() > 0) {
-                System.out.println("I can give a " + ingredient);
-            } else {
-                System.out.println("We're OUT of " + ingredient);
+                System.out.println(
+                        getName() + ": I can give a " + ingredient
+                );
+            } else if ((int) pair.getValue() == 0) {
+                System.out.println(
+                        "We're OUT of " + ingredient
+                );
             }
         }
     }

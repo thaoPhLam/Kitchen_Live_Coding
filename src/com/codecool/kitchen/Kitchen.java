@@ -46,7 +46,13 @@ public class Kitchen implements IngredientChecker {
     public boolean doWeHaveIngredient(Ingredient ingredient) {
         for (KitchenHelper kitchenHelper : kitchenHelpers) {
             kitchenHelper.giveIngredient(ingredient);
-            System.out.println("could provide " + ingredient);
+            System.out.println(
+                    getClass().getSimpleName() +
+                    ": could provide " + ingredient +
+                            " from " + kitchenHelper.getName()
+            );
+
+            return true;
         }
         return false;
     }

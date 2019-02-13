@@ -24,7 +24,7 @@ public class Chef extends Cooker {
     public void cook() {
         Ingredient ingredient = Ingredient.getRandom();
         if (request(ingredient)) {
-            System.out.println("Wohoo");
+            System.out.println(getClass().getSimpleName() + ": Wohoo");
         } else {
             System.out.println("NO " + ingredient + "?!!");
         }
