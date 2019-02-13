@@ -13,7 +13,7 @@ public class Main {
         kitchen.hire(new KitchenHelper("Dani", "1993", 200));
         kitchen.hire(new KitchenHelper("Thao", "1993", 200));
 
-        kitchen.hire(new Chef("Laci", "1990", 400));
+        kitchen.hire(new Chef("Laci", "1990", 400, kitchen));
 
         kitchen.conductAShift();
     }
