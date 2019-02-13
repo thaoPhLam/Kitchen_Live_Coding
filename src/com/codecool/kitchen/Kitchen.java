@@ -16,7 +16,7 @@ public class Kitchen implements IngredientChecker {
     public void hire(Employee employee) {
         if (employee instanceof Chef) {
             this.chef = (Chef) employee;
-            chef.registerProvider(this);
+            //chef.registerProvider(this);
         } else if (employee instanceof KitchenHelper) {
             kitchenHelpers.add((KitchenHelper) employee);
         } else if (employee instanceof Cook) {
@@ -43,9 +43,11 @@ public class Kitchen implements IngredientChecker {
      * meghívjuk rajtuk a giveIngredient(Ingredient ingredient)-t
      */
     @Override
-    public void doWeHaveIngredient(Ingredient ingredient) {
+    public boolean doWeHaveIngredient(Ingredient ingredient) {
         for (KitchenHelper kitchenHelper : kitchenHelpers) {
             kitchenHelper.giveIngredient(ingredient);
+            System.out.println("could provide " + ingredient);
         }
+        return false;
     }
 }
