@@ -13,6 +13,7 @@ public class KitchenHelper extends Employee {
 
     public KitchenHelper(String name, String birthDate, int salary) {
         super(name, birthDate, salary);
+        fillBasket();
     }
 
     public void fillBasket() {
@@ -22,6 +23,14 @@ public class KitchenHelper extends Employee {
     }
 
     public void giveIngredient(Ingredient ingredient) {
+
+        if (ingredients.getOrDefault(ingredient, 0) > 0) {
+
+        } else {
+            System.out.println(getName() + ": I'm OUT of " + ingredient);
+        }
+
+        /*
         Iterator it = ingredients.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
@@ -34,6 +43,6 @@ public class KitchenHelper extends Employee {
                         "We're OUT of " + ingredient
                 );
             }
-        }
+        }*/
     }
 }
