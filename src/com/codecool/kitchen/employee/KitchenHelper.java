@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class KitchenHelper extends Employee{
+public class KitchenHelper extends Employee {
     private Map<Ingredient, Integer> basket = new TreeMap<>();
 
     private Random rnd = new Random();
